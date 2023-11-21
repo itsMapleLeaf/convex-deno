@@ -1,5 +1,4 @@
 import { useQuery, useMutation } from "convex/react"
-import "./App.css"
 import { api } from "./convex.ts"
 
 const reactLogoUrl = new URL("./assets/react.svg", import.meta.url).href
