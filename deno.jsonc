@@ -1,0 +1,25 @@
+{
+	"tasks": {
+		"dev": "deno run -A --node-modules-dir npm:vite",
+		"build": "deno run -A --node-modules-dir npm:vite build",
+		"preview": "deno run -A --node-modules-dir npm:vite preview",
+		"serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
+	},
+	"imports": {
+		// esm.sh is still the best way to use react with types
+		"react": "https://esm.sh/react@18.2.0",
+		"react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+		"react-dom": "https://esm.sh/react-dom@18.2.0",
+		"react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
+	},
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"lib": ["deno.window", "dom"]
+	},
+	"nodeModulesDir": true,
+	"fmt": {
+		"semiColons": false,
+		"useTabs": true
+	}
+}
