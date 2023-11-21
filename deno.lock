@@ -8,6 +8,7 @@
       "npm:@vitejs/plugin-react@4.2.0": "npm:@vitejs/plugin-react@4.2.0_vite@5.0.0_@babel+core@7.23.3",
       "npm:@vitejs/plugin-react@^4.2.0": "npm:@vitejs/plugin-react@4.2.0_vite@5.0.0_@babel+core@7.23.3",
       "npm:convex": "npm:convex@1.5.1",
+      "npm:convex@1.6.2": "npm:convex@1.6.2_react@18.2.0_react-dom@18.2.0__react@18.2.0",
       "npm:cowsay": "npm:cowsay@1.5.0",
       "npm:create-react-app-extra": "npm:create-react-app-extra@1.3.5",
       "npm:create-vite-extra@latest": "npm:create-vite-extra@2.0.0",
@@ -651,6 +652,16 @@
           "esbuild": "esbuild@0.17.19",
           "jwt-decode": "jwt-decode@3.1.2",
           "node-fetch": "node-fetch@2.7.0"
+        }
+      },
+      "convex@1.6.2_react@18.2.0_react-dom@18.2.0__react@18.2.0": {
+        "integrity": "sha512-KM3ACQq6wE0slJR3MdsN5lRsRX107jPsLp5sCS3t+DaMOu0Rl+N+XkHUbkaw4b0LAVC+6RipBh+bw/yBh7uCqA==",
+        "dependencies": {
+          "esbuild": "esbuild@0.17.19",
+          "jwt-decode": "jwt-decode@3.1.2",
+          "node-fetch": "node-fetch@2.7.0",
+          "react": "react@18.2.0",
+          "react-dom": "react-dom@18.2.0_react@18.2.0"
         }
       },
       "core-util-is@1.0.3": {

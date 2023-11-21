@@ -1,34 +1,27 @@
-import { useState } from "react"
+import { useQuery, useMutation } from "convex/react"
 import "./App.css"
+import { api } from "./convex.ts"
 
 const reactLogoUrl = new URL("./assets/react.svg", import.meta.url).href
 
 export function App() {
-	const [count, setCount] = useState(0)
-
+	const tasks = useQuery(api.tasks.list)
+	const create = useMutation(api.tasks.create)
 	return (
 		<>
-			<img src="/vite-deno.svg" alt="Vite with Deno" />
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src="/vite.svg" className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogoUrl} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
+			<button
+				onClick={() => {
+					const name = prompt("Task name?")
+					if (name) create({ text: name })
+				}}
+			>
+				Create
+			</button>
+			<ul>
+				{tasks?.map((task) => (
+					<li key={task._id}>{task.text}</li>
+				))}
+			</ul>
 		</>
 	)
 }
